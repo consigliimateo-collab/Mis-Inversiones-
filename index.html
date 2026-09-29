@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Mis inversiones</title>
+  <meta name="description" content="Terminal de seguimiento de carteras propias y de terceros, con datos verificados.">
+  <meta name="theme-color" content="#0a0c10">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Inversiones">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="app">
+  <header class="top">
+    <span class="brand">INVERSIONES</span>
+    <nav class="tabs" aria-label="Secciones">
+      <button class="tab" data-tab="market" aria-selected="true">Mercado</button>
+      <button class="tab" data-tab="portfolio" aria-selected="false">Cartera</button>
+      <button class="tab" data-tab="risk" aria-selected="false">Riesgo</button>
+      <button class="tab" data-tab="data" aria-selected="false">Datos</button>
+    </nav>
+    <div class="ixs" id="ixs"></div>
+    <div class="tools">
+      <select id="scope" aria-label="Cartera activa"></select>
+      <button class="btn" id="currency" title="Moneda de la cartera">USD</button>
+      <label class="inl">CCL <input id="ccl" type="number" min="1" step="any"></label>
+      <button class="btn" id="refresh">Actualizar</button>
+      <button class="bell" id="bell" data-tab="risk">Sin alertas</button>
+      <button class="btn on" id="install" hidden>Instalar app</button>
+      <button class="btn on" id="install-ios" hidden>Instalar</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="ws" data-view="market">
+      <aside class="rail" aria-label="Lista de seguimiento">
+        <div class="rail-h">
+          <input id="q" placeholder="Buscar ( / )" aria-label="Buscar activo">
+          <select id="sector" aria-label="Sector"></select>
+          <select id="sort" aria-label="Ordenar"></select>
+        </div>
+        <div class="rail-list" id="rail"></div>
+      </aside>
+      <div class="center" id="asset"></div>
+      <aside class="side" id="side"></aside>
+    </section>
+
+    <section class="page" data-view="portfolio" hidden>
+      <div class="bar-h">
+        <div class="chips" id="pf-chips"></div>
+        <form class="frm" onsubmit="return false">
+          <input id="np-name" placeholder="Nueva cartera" maxlength="40" aria-label="Nombre de la cartera">
+          <select id="np-kind" aria-label="Tipo"><option value="own">Propio</option><option value="third">Terceros</option></select>
+          <button class="btn" id="np-add">Crear</button>
+          <button class="btn" id="pf-del">Eliminar cartera</button>
+        </form>
+      </div>
+      <div class="msg" id="np-msg" role="alert"></div>
+      <div id="pf-banners"></div>
+      <div class="kpis" id="pf-kpis"></div>
+      <div class="cols wide">
+        <div><h3>Posiciones</h3>
+          <div class="tw"><table>
+            <thead><tr><th>Activo</th><th class="r">Cantidad</th><th class="r">Costo prom.</th><th class="r">Precio</th><th class="r">Valor</th><th class="r">Peso</th><th class="r">No realizado</th><th class="r">Hoy</th><th></th></tr></thead>
+            <tbody id="pf-rows"></tbody>
+          </table></div></div>
+        <div><h3>Composición</h3><div id="pf-alloc"></div></div>
+      </div>
+      <h3>Registrar operación</h3>
+      <form class="frm ops" onsubmit="return false">
+        <label>Cartera<select id="tx-pid"></select></label>
+        <label>Operación<select id="tx-side"><option value="buy">Compra</option><option value="sell">Venta</option></select></label>
+        <label>Activo<select id="tx-tk"></select></label>
+        <label>Cantidad<input id="tx-qty" type="number" min="0" step="any"></label>
+        <label>Precio (USD)<input id="tx-price" type="number" min="0" step="any"></label>
+        <label>Comisión (USD)<input id="tx-fee" type="number" min="0" step="any" value="0"></label>
+        <label>Fecha<input id="tx-date" type="date"></label>
+        <button class="btn on" id="tx-add">Registrar</button>
+      </form>
+      <div class="msg" id="tx-msg" role="alert"></div>
+      <h3>Historial de operaciones</h3>
+      <div class="tw"><table>
+        <thead><tr><th>Fecha</th><th>Cartera</th><th>Operación</th><th>Activo</th><th class="r">Cantidad</th><th class="r">Precio</th><th class="r">Comisión</th><th></th></tr></thead>
+        <tbody id="pf-txs"></tbody>
+      </table></div>
+    </section>
+
+    <section class="page" data-view="risk" hidden>
+      <h3>Límites y parámetros</h3>
+      <form class="frm ops" onsubmit="return false">
+        <label>Stop loss (%)<input id="r-stop" type="number" min="0" step="any"></label>
+        <label>Riesgo por operación (% del patrimonio)<input id="r-risk" type="number" min="0" step="any"></label>
+        <label>Peso máximo por activo (%)<input id="r-maxw" type="number" min="0" step="any"></label>
+        <label>Peso máximo por sector (%)<input id="r-maxs" type="number" min="0" step="any"></label>
+      </form>
+      <h3>Alertas</h3><div id="risk-alerts"></div>
+      <div id="risk-body"></div>
+    </section>
+
+    <section class="page" data-view="data" hidden>
+      <h3>Controles de coherencia</h3><div id="data-res"></div>
+      <h3>Procedencia de cada dato</h3>
+      <div class="tw"><table>
+        <thead><tr><th>Activo</th><th class="r">Precio</th><th>Fuentes</th><th>Calidad</th><th class="r">Dif. entre fuentes</th><th>Fecha del dato</th><th class="r">Ruedas de histórico</th></tr></thead>
+        <tbody id="data-rows"></tbody>
+      </table></div>
+      <h3>Respaldos y exportación</h3>
+      <p class="mu">Tus carteras se guardan solo en este dispositivo. Descarga un respaldo con frecuencia; para pasarlas a otro equipo, impórtalo allí.</p>
+      <div class="frm">
+        <button class="btn on" id="bk-export">Descargar respaldo</button>
+        <label class="btn file">Importar respaldo<input id="bk-file" type="file" accept="application/json,.json" hidden></label>
+        <button class="btn on" id="bk-confirm" hidden>Confirmar importación</button>
+        <button class="btn" id="csv-txs">Operaciones (CSV)</button>
+        <button class="btn" id="csv-pos">Posiciones (CSV)</button>
+      </div>
+      <div class="msg" id="bk-msg" role="status"></div>
+      <div id="data-context"></div>
+      <p class="mu legal">Información con fines de análisis y seguimiento. No constituye asesoramiento financiero ni recomendación de inversión. Las cotizaciones provienen de fuentes públicas no oficiales, pueden tener demora o errores, y deben verificarse con tu broker antes de operar.</p>
+    </section>
+  </main>
+
+  <footer class="status" id="status" role="status"></footer>
+</div>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,252 @@
+{
+  "schema": 2,
+  "updatedAt": null,
+  "source": "Planilla original",
+  "ccl": {
+    "value": 1280,
+    "source": "Planilla original",
+    "asOf": null
+  },
+  "quotes": {
+    "QQQ": {
+      "price": 736.53,
+      "change": -1.07,
+      "high": 748.63,
+      "low": 555.6,
+      "quality": "snapshot",
+      "sources": [
+        "Planilla original"
+      ],
+      "asOf": null,
+      "diffPct": null
+    },
+    "SPY": {
+      "price": 765.61,
+      "change": -0.74,
+      "high": 779.37,
+      "low": 629.28,
+      "quality": "snapshot",
+      "sources": [
+        "Planilla original"
+      ],
+      "asOf": null,
+      "diffPct": null
+    },
+    "VT": {
+      "price": 158.81,
+      "change": -0.76,
+      "high": 162.71,
+      "low": 133.65,
+      "quality": "snapshot",
+      "sources": [
+        "Planilla original"
+      ],
+      "asOf": null,
+      "diffPct": null
+    },
+    "IBIT": {
+      "price": 47.21,
+      "change": -0.76,
+      "high": 71.82,
+      "low": 32.84,
+      "quality": "snapshot",
+      "sources": [
+        "Planilla original"
+      ],
+      "asOf": null,
+      "diffPct": null
+    },
+    "OKLO": {
+      "price": 37.11,
+      "change": -2.44,
+      "high": 193.84,
+      "low": 34.38,
+      "quality": "snapshot",
+      "sources": [
+        "Planilla original"
+      ],
+      "asOf": null,
+      "diffPct": null
+    },
+    "PAM": {
+      "price": 76.55,
+      "change": -1.71,
+      "high": 94.5,
+      "low": 57.14,
+      "quality": "snapshot",
+      "sources": [
+        "Planilla original"
+      ],
+      "asOf": null,
+      "diffPct": null
+    },
+    "TGS": {
+      "price": 25.86,
+      "change": -2.85,
+      "high": 36.35,
+      "low": 20.01,
+      "quality": "snapshot",
+      "sources": [
+        "Planilla original"
+      ],
+      "asOf": null,
+      "diffPct": null
+    },
+    "VIST": {
+      "price": 66.91,
+      "change": -0.77,
+      "high": 81.44,
+      "low": 33.45,
+      "quality": "snapshot",
+      "sources": [
+        "Planilla original"
+      ],
+      "asOf": null,
+      "diffPct": null
+    },
+    "YPF": {
+      "price": 51.37,
+      "change": -1.4,
+      "high": 57.87,
+      "low": 23.02,
+      "quality": "snapshot",
+      "sources": [
+        "Planilla original"
+      ],
+      "asOf": null,
+      "diffPct": null
+    },
+    "AAPL": {
+      "price": 338.4,
+      "change": -0.78,
+      "high": 345.34,
+      "low": 243.42,
+      "quality": "snapshot",
+      "sources": [
+        "Planilla original"
+      ],
+      "asOf": null,
+      "diffPct": null
+    },
+    "GOOGL": {
+      "price": 342.75,
+      "change": -0.34,
+      "high": 408.61,
+      "low": 235.84,
+      "quality": "snapshot",
+      "sources": [
+        "Planilla original"
+      ],
+      "asOf": null,
+      "diffPct": null
+    },
+    "MELI": {
+      "price": 1712.41,
+      "change": -2.29,
+      "high": 2548.5,
+      "low": 1495,
+      "quality": "snapshot",
+      "sources": [
+        "Planilla original"
+      ],
+      "asOf": null,
+      "diffPct": null
+    },
+    "MSFT": {
+      "price": 509.22,
+      "change": -1.35,
+      "high": 553.72,
+      "low": 349.2,
+      "quality": "snapshot",
+      "sources": [
+        "Planilla original"
+      ],
+      "asOf": null,
+      "diffPct": null
+    },
+    "TSLA": {
+      "price": 357.45,
+      "change": -3.94,
+      "high": 498.82,
+      "low": 297.38,
+      "quality": "snapshot",
+      "sources": [
+        "Planilla original"
+      ],
+      "asOf": null,
+      "diffPct": null
+    },
+    "AVGO": {
+      "price": 349.57,
+      "change": -0.92,
+      "high": 495,
+      "low": 289.96,
+      "quality": "snapshot",
+      "sources": [
+        "Planilla original"
+      ],
+      "asOf": null,
+      "diffPct": null
+    },
+    "MU": {
+      "price": 1053.98,
+      "change": -2.61,
+      "high": 1255,
+      "low": 159.97,
+      "quality": "snapshot",
+      "sources": [
+        "Planilla original"
+      ],
+      "asOf": null,
+      "diffPct": null
+    },
+    "NVDA": {
+      "price": 228.86,
+      "change": 1.68,
+      "high": 236.54,
+      "low": 164.27,
+      "quality": "snapshot",
+      "sources": [
+        "Planilla original"
+      ],
+      "asOf": null,
+      "diffPct": null
+    },
+    "PLTR": {
+      "price": 187.48,
+      "change": -1.15,
+      "high": 207.52,
+      "low": 106.38,
+      "quality": "snapshot",
+      "sources": [
+        "Planilla original"
+      ],
+      "asOf": null,
+      "diffPct": null
+    },
+    "QCOM": {
+      "price": 187.48,
+      "change": -7.17,
+      "high": 259.92,
+      "low": 121.99,
+      "quality": "snapshot",
+      "sources": [
+        "Planilla original"
+      ],
+      "asOf": null,
+      "diffPct": null
+    },
+    "TSM": {
+      "price": 452.88,
+      "change": 0.5,
+      "high": 479,
+      "low": 266.82,
+      "quality": "snapshot",
+      "sources": [
+        "Planilla original"
+      ],
+      "asOf": null,
+      "diffPct": null
+    }
+  }
+}

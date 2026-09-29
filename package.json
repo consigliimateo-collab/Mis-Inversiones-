@@ -1,0 +1,13 @@
+{
+  "name": "mis-inversiones",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Watchlist, cartera y simulador de inversiones (PWA sin dependencias)",
+  "scripts": {
+    "start": "python3 -m http.server 8080",
+    "update": "node scripts/update-prices.mjs",
+    "test": "node --test"
+  },
+  "engines": { "node": ">=18" }
+}
